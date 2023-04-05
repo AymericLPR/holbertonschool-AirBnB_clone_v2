@@ -37,7 +37,10 @@ def numberonly(n):
 
 @app.route("/number_template/<int:n>", strict_slashes=False)
 def numbertemplate(n):
-    return render_template('5-number.html', number=n)
+    if isinstance(n, int):
+        return render_template("5-number.html", number=n)
+    else:
+        return
 
 
 if __name__ == "__main__":
