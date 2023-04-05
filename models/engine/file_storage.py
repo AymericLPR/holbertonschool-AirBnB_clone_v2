@@ -54,3 +54,7 @@ class FileStorage:
                         self.__objects[i] = Review(**j)
         except Exception:
             pass
+
+    def close(self):
+        """ reload is a method for deserializing the JSON file to objects """
+        self.reload()
