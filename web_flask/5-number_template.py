@@ -31,7 +31,7 @@ def pythondefault():
 
 
 @app.route("/number/<int:n>", strict_slashes=False)
-def number(n):
+def numberonly(n):
     return "{} is a number".format(n)
 
 
