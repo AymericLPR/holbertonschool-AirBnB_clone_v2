@@ -1,4 +1,3 @@
-
 #!/usr/bin/python3
 import sqlalchemy
 from sqlalchemy import inspect
