@@ -1,10 +1,12 @@
 #!/usr/bin/python3
-"""amenity class"""
-from models.base_model import BaseModel
+""" State Module for HBNB project """
+from models.base_model import BaseModel, Base
+from sqlalchemy import Column, String
+from sqlalchemy.orm import relationship
+import os
 
 
-class Amenity(BaseModel):
-    """class for Amenity with attributes:
-        name: input name
-    """
-    name = ""
+class Amenity(BaseModel, Base):
+    __tablename__ = 'amenities'
+    name = Column(String(128), nullable=False)
+    place_amenities = relationship("Place", secondary='place_amenity')
